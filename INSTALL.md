@@ -40,14 +40,17 @@ These surfaces don't read your filesystem — skills are uploaded through the UI
 
 `examples/build_demo.js` renders a four-slide demo. It needs:
 
-- **Node.js** with **pptxgenjs** (`npm i pptxgenjs`)
+- **Node.js** with **pptxgenjs** — run `npm install` in the skill folder (a `package.json` is included)
 - **LibreOffice** (`soffice`) to convert PPTX → PDF
 - **poppler** (`pdftoppm`) to convert PDF → PNG
 
 ```bash
+npm install                                       # installs pptxgenjs from package.json
 node examples/build_demo.js                       # writes demo.pptx
 soffice --headless --convert-to pdf demo.pptx     # PPTX → PDF
-pdftoppm -png -r 150 demo.pdf images/slide        # PDF → PNG per page
+mkdir -p out && pdftoppm -png -r 150 demo.pdf out/slide   # PDF → PNG per page (into out/)
 ```
+
+The renders land in `out/` so they don't overwrite the sample images in `images/`.
 
 In Claude Code or Cowork, just ask Claude to "build a deck on <your topic>" — it runs the workflow in `SKILL.md` and writes its own build script.

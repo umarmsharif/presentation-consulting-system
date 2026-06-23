@@ -1,0 +1,13 @@
+{
+  "name": "consulting-deck-builder",
+  "version": "1.0.0",
+  "description": "Open Agent Skill for building consulting-grade strategy decks that don't look AI-made.",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "demo": "node examples/build_demo.js"
+  },
+  "dependencies": {
+    "pptxgenjs": "^4.0.1"
+  }
+}

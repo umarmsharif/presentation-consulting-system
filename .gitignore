@@ -1,6 +1,7 @@
 # build artifacts
 demo.pptx
 demo.pdf
+out/
 *.zip
 
 # deps
