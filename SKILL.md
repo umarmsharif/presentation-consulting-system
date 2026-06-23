@@ -15,7 +15,7 @@ Read `references/design-system.md` for the eight themes, the font list, and the 
 
 ### (a) Brief the deck
 
-Before anything, pin down four things. If the request leaves any of them ambiguous, ask — a wrong assumption here means rebuilt slides later.
+Before anything, pin down four things. When a person is in the loop, confirm them with a structured question rather than assuming: use the **AskUserQuestion** tool where it exists (Claude Code), otherwise ask a short, explicit prose question. A wrong assumption here, above all on the **archetype and framing**, means rebuilt slides later. Surface the archetype/framing choice as the question (SCQA vs diagnostic vs recommendation, and so on) so the user picks the shape before any structure is committed.
 
 - **Audience.** Who reads it, and what do they already believe? A board briefing, a client recommendation, and an internal review are three different decks.
 - **Goal.** What do you want the reader to *do* or *decide* after the last slide? Write it as one sentence. That sentence is the deck's spine.
@@ -30,6 +30,19 @@ Before anything, pin down four things. If the request leaves any of them ambiguo
 | **transformation** | How do we get from A to B? | current state → target state → the journey → milestones |
 | **pitch** | Why this, why now, why us? | problem → solution → traction → market → the ask |
 
+The six above are deck **types**. You can also frame the argument with a classic structuring pattern that sets how the logic opens and flows. These are chosen explicitly for board and executive work, and they overlay a type:
+
+| Framing | When to use | Spine |
+|---|---|---|
+| **SCQA** | Build tension before the answer (narrative briefings) | Situation → Complication → Question → Answer |
+| **SCR** | A tighter SCQA for short reads | Situation → Complication → Resolution |
+| **BLUF** | Time-poor executives; answer on slide one | bottom line first → support → detail |
+| **inductive** | Build from evidence up to a conclusion | evidence → pattern → conclusion |
+| **deductive** | Argue down from accepted premises | premise → premise → therefore |
+| **issue-tree** | Decompose the question MECE | question → branches → sub-branches → answer |
+
+Name the deck type and, if it sharpens the open, a framing. "recommendation + BLUF" and "diagnostic + SCQA" are common pairings.
+
 - **Theme + display font.** Pick one of the eight themes (default `bright-white-pine`) and one display font from the vetted set (each theme ships a sensible default). Both are recorded once at the top of the build and never mixed mid-deck. See `references/design-system.md`.
 
 ### (b) Ghost-deck the whole thing first — MANDATORY
@@ -42,6 +55,8 @@ Before anything, pin down four things. If the request leaves any of them ambiguo
 | 2 | The funnel breaks in three places, and the middle one is fixable now | diagnostic-three-panel |
 | 3 | Fixing the mid-funnel returns 8× what the other two cost | chart + commentary rail |
 | … | … | … |
+
+Present this table and get explicit sign-off before building anything. In Claude Code, use the **AskUserQuestion** tool — offer *approve all / revise specific slides / restructure*; on Cowork or chat, ask for the same approval in prose. Build no slide until the brief and the ghost deck are both signed off. If you are running autonomously with no person present, state the archetype, framing, and ghost deck you are proceeding with, then continue.
 
 The ghost deck is where the argument gets fixed. Read the action titles **top to bottom on their own** — they should tell the whole story without any slide opening. If they don't, the story isn't there yet; fix it in the table, not in the slides. This is the single highest-leverage step in the whole process.
 

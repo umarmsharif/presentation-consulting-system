@@ -25,28 +25,41 @@ Four slides from the included demo build. The company, "Meridian," is fictional 
 ![Impact-effort prioritisation matrix slide](images/slide-3.png)
 ![Phased roadmap gantt slide](images/slide-4.png)
 
-## Install
+## Where to run it
 
-**Claude Code:**
+It's an Agent Skill, so it runs anywhere Claude does. **Claude Code gives the best experience by far.** It reads the skill's files directly, runs the build script, and writes an editable `.pptx` straight into your project, because it has full access to your files and folders. Cowork is a close second. Chat is for the thinking work.
+
+Whatever the surface, the flow is the same once it triggers: a short brief, then a **ghost deck** (action titles + a layout per slide) for your sign-off, then it writes its own build script and produces the deck. You get an editable `.pptx`, not a screenshot.
+
+### Claude Code (recommended)
 
 ```bash
 git clone https://github.com/umarmsharif/presentation-consulting-system.git \
   ~/.claude/skills/consulting-deck-builder
+cd ~/.claude/skills/consulting-deck-builder && npm install
 ```
 
-Start a new session and ask Claude to build a deck.
+Start a new session and ask:
 
-**Claude.ai / desktop / Cowork:** zip the folder and upload it via `Customize → Skills → Create skill → Upload a skill`.
+> "Build a diagnostic deck on our churn problem, 8 slides, Slate theme."
 
-Full steps, requirements, and how to run the demo: see [INSTALL.md](INSTALL.md).
+Claude loads the skill, runs the ghost-deck flow, then renders an editable PowerPoint into your working folder. It can open every reference file and run the build on the spot, so it can also render preview images and iterate. That direct file and folder access is why Claude Code is the fullest experience.
 
-## How to use it
+### Cowork (Claude desktop app)
 
-Once installed, just ask:
+Cowork doesn't scan your skills folder, so install it once by upload:
 
-> "Build me a diagnostic deck on our churn problem, 8 slides, Bright White & Pine theme."
+1. Zip the folder so it unzips to `consulting-deck-builder/SKILL.md`.
+2. **Settings → Capabilities**: enable Skills and code execution.
+3. **Customize → Skills → `+` → Create skill → Upload a skill**, and choose the zip.
 
-The skill runs a short brief, proposes a **ghost deck** (action titles + layout per slide) for your sign-off, then builds each slide. It writes its own PowerPoint build script, so you get an editable `.pptx`, not a screenshot.
+Then ask it to build a deck. Cowork has local file access too, so it can write the `.pptx` into your folders.
+
+### Chat (claude.ai)
+
+Same upload path as Cowork: **Customize → Skills → Upload a skill**. Chat is strongest for the brief, the ghost deck, the action titles, and the slide content. With code execution enabled it can also generate a downloadable `.pptx`, but there's no persistent filesystem, so it's a download-based flow rather than files written into a project.
+
+Full step-by-step (zip command, requirements, running the demo): see [INSTALL.md](INSTALL.md).
 
 ## What's included
 
