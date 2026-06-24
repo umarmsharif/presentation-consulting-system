@@ -1,0 +1,6 @@
+{
+  "name": "consulting-deck-builder",
+  "version": "1.0.0",
+  "description": "Build consulting-grade strategy decks that don't look AI-made.",
+  "contextFileName": "AGENTS.md"
+}

@@ -61,6 +61,10 @@ Same upload path as Cowork: **Customize → Skills → Upload a skill**. Chat is
 
 Full step-by-step (zip command, requirements, running the demo): see [INSTALL.md](INSTALL.md).
 
+### Other coding agents (Codex, Cursor, Gemini, Cline, Windsurf, opencode)
+
+The repo ships a portable [`AGENTS.md`](AGENTS.md) entry point that Codex, opencode, Gemini CLI, Amp, and Antigravity read natively, plus rule files for Cursor (`.cursor/rules/`), Windsurf (`.windsurf/rules/`), and Cline (`.clinerules/`). Clone the repo and an agent working inside it can build decks; to use it in your own projects, copy `AGENTS.md` (or the relevant rule file) into that project or your global agent config. Any of these agents can run the pptxgenjs build, so they produce a real `.pptx`, not just an outline.
+
 ## What's included
 
 - **8 themes**: complete palettes and type pairings (Bright White & Pine, Slate, Oxblood, Solarized, Paper, Mono, Ink, Midnight).
