@@ -13,13 +13,26 @@ Read `references/design-system.md` for the eight themes, the font list, and the 
 
 ## The workflow
 
-### (a) Brief the deck
+### (a) Intake — collect the user's preferences first
 
-Before anything, pin down four things. When a person is in the loop, confirm them with a structured question rather than assuming: use the **AskUserQuestion** tool where it exists (Claude Code), otherwise ask a short, explicit prose question. A wrong assumption here, above all on the **archetype and framing**, means rebuilt slides later. Surface the archetype/framing choice as the question (SCQA vs diagnostic vs recommendation, and so on) so the user picks the shape before any structure is committed.
+Open every deck by gathering the brief through **structured questions**, before any planning or building. Where the **AskUserQuestion** tool exists (Claude Code), deliver these as two calls; the tool takes up to four questions per call. On Cowork or chat, ask the same as one short numbered list. Do not start the ghost deck until they are answered. Running autonomously with no user present, state your defaults and proceed.
 
-- **Audience.** Who reads it, and what do they already believe? A board briefing, a client recommendation, and an internal review are three different decks.
-- **Goal.** What do you want the reader to *do* or *decide* after the last slide? Write it as one sentence. That sentence is the deck's spine.
-- **Archetype.** What shape is the argument? The archetype drives the slide order:
+**Call 1 — the argument**
+
+1. **Audience** — who reads it, and what do they already believe? (board · investor · client · internal leadership · team)
+2. **Goal** — what one decision or action do you want after the last slide? This one sentence becomes the deck's spine.
+3. **Deck type** — diagnostic · recommendation · roadmap · market-entry · transformation · pitch (options below).
+4. **Framing** — how the argument opens: none · SCQA · SCR · BLUF · inductive · deductive · issue-tree (options below).
+
+**Call 2 — the form**
+
+5. **Length** — auto (let the content decide) · ~6–8 (executive) · ~10–14 · ~16+ (deep-dive).
+6. **Theme** — bright-white-pine (default) · slate · oxblood · solarized · paper · mono · ink · midnight.
+7. **Display font** — theme default · Charter · Palatino · Iowan · Baskerville · Hoefler · Cochin · Optima · Manrope Bold.
+
+Output is PowerPoint unless the user asks otherwise. The topic and any source material come from their opening request; ask for them if missing. A wrong assumption here, above all on **type and framing**, means rebuilt slides later. Whatever the user picks for theme and font is recorded once at the top of the build and never mixed mid-deck (tokens in `references/design-system.md`).
+
+**Deck-type options** — the type drives the slide order:
 
 | Archetype | The reader's question | Typical spine |
 |---|---|---|
@@ -30,7 +43,7 @@ Before anything, pin down four things. When a person is in the loop, confirm the
 | **transformation** | How do we get from A to B? | current state → target state → the journey → milestones |
 | **pitch** | Why this, why now, why us? | problem → solution → traction → market → the ask |
 
-The six above are deck **types**. You can also frame the argument with a classic structuring pattern that sets how the logic opens and flows. These are chosen explicitly for board and executive work, and they overlay a type:
+**Framing options** — overlay a deck type to set how the logic opens and flows (chosen explicitly for board and executive work):
 
 | Framing | When to use | Spine |
 |---|---|---|
@@ -41,9 +54,7 @@ The six above are deck **types**. You can also frame the argument with a classic
 | **deductive** | Argue down from accepted premises | premise → premise → therefore |
 | **issue-tree** | Decompose the question MECE | question → branches → sub-branches → answer |
 
-Name the deck type and, if it sharpens the open, a framing. "recommendation + BLUF" and "diagnostic + SCQA" are common pairings.
-
-- **Theme + display font.** Pick one of the eight themes (default `bright-white-pine`) and one display font from the vetted set (each theme ships a sensible default). Both are recorded once at the top of the build and never mixed mid-deck. See `references/design-system.md`.
+Common pairings: "recommendation + BLUF", "diagnostic + SCQA".
 
 ### (b) Ghost-deck the whole thing first — MANDATORY
 
