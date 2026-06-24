@@ -33,9 +33,18 @@ Whatever the surface, the flow is the same once it triggers: a short brief, then
 
 ### Claude Code (recommended)
 
+Install as a plugin from the marketplace:
+
+```
+/plugin marketplace add umarmsharif/presentation-consulting-system
+/plugin install consulting-deck-builder@presentation-consulting-system
+```
+
+Or copy the skill folder in by hand:
+
 ```bash
-git clone https://github.com/umarmsharif/presentation-consulting-system.git \
-  ~/.claude/skills/consulting-deck-builder
+git clone https://github.com/umarmsharif/presentation-consulting-system.git /tmp/cdb
+cp -r /tmp/cdb/skills/consulting-deck-builder ~/.claude/skills/
 cd ~/.claude/skills/consulting-deck-builder && npm install
 ```
 
@@ -70,8 +79,8 @@ The repo ships a portable [`AGENTS.md`](AGENTS.md) entry point that Codex, openc
 - **8 themes**: complete palettes and type pairings (Bright White & Pine, Slate, Oxblood, Solarized, Paper, Mono, Ink, Midnight).
 - **A pattern catalogue**: workhorse exhibits (diagnostic three-panel, impact/effort matrix, phased gantt, waterfall, comparison tables, stat heroes) plus denser composites.
 - **Chart guidance**: a message-to-chart-type guide and the honesty rules (no 3D, direct labels, zero baselines, logical ordering).
-- **A working example**: `examples/build_demo.js` renders the four slides above.
-- **A title linter**: `scripts/check_titles.js` flags topic-labels that should be action titles.
+- **A working example**: `skills/consulting-deck-builder/examples/build_demo.js` renders the four slides above.
+- **A title linter**: `skills/consulting-deck-builder/scripts/check_titles.js` flags topic-labels that should be action titles.
 - **Prose discipline**: built-in guidance to strip the vocabulary and rhythms that read as AI.
 
 ## What's not here (the full version)

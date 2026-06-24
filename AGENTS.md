@@ -6,9 +6,11 @@ This file is the **portable entry point**. Any agent that reads `AGENTS.md` (Cod
 
 ## How to use
 
-1. Read `SKILL.md` for the full workflow: intake → ghost-deck sign-off → per-slide build → QA.
-2. Pull the references as the workflow points to them: `references/design-system.md` (8 themes, fonts, slide anatomy), `references/patterns.md` (layout catalogue), `references/charts.md` (chart selection + honesty rules).
-3. Use `examples/build_demo.js` as a working pptxgenjs build to copy from. Requires Node and `pptxgenjs` (`npm install`).
+The skill lives in `skills/consulting-deck-builder/`. To build a deck:
+
+1. Read `skills/consulting-deck-builder/SKILL.md` for the full workflow: intake → ghost-deck sign-off → per-slide build → QA.
+2. Pull its references as the workflow points to them: `references/design-system.md` (8 themes, fonts, slide anatomy), `references/patterns.md` (layout catalogue), and `references/charts.md` (chart selection + honesty rules), all inside that skill folder.
+3. Use `skills/consulting-deck-builder/examples/build_demo.js` as a working pptxgenjs build to copy from. Requires Node and `pptxgenjs` (`npm install` in that folder).
 
 ## The discipline in one paragraph
 

@@ -1,0 +1,12 @@
+{
+  "name": "consulting-deck-builder",
+  "version": "1.0.0",
+  "description": "Build consulting-grade strategy decks that don't look AI-made. 8 themes, 20+ patterns, a ghost-deck workflow, and honest charts.",
+  "author": {
+    "name": "Umar Sharif",
+    "url": "https://github.com/umarmsharif"
+  },
+  "homepage": "https://github.com/umarmsharif/presentation-consulting-system",
+  "license": "MIT",
+  "keywords": ["presentation", "slides", "consulting", "deck", "pptx", "strategy", "skill"]
+}

@@ -1,0 +1,17 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "presentation-consulting-system",
+  "description": "Consulting-grade strategy decks that don't look AI-made.",
+  "owner": {
+    "name": "Umar Sharif",
+    "url": "https://github.com/umarmsharif"
+  },
+  "plugins": [
+    {
+      "name": "consulting-deck-builder",
+      "description": "Build board/diagnostic/roadmap/pitch decks: 8 themes, 20+ patterns, ghost-deck workflow, honest charts.",
+      "source": "./",
+      "category": "productivity"
+    }
+  ]
+}
