@@ -29,6 +29,7 @@ Open every deck by gathering the brief through **structured questions**, before 
 5. **Length** — auto (let the content decide) · ~6–8 (executive) · ~10–14 · ~16+ (deep-dive).
 6. **Theme** — bright-white-pine (default) · slate · oxblood · solarized · paper · mono · ink · midnight.
 7. **Display font** — theme default · Charter · Palatino · Iowan · Baskerville · Hoefler · Cochin · Optima · Manrope Bold.
+8. **Slide chrome** — which framing elements each slide carries: full (breadcrumb top-left + `N of M` page number + footer source/caveat — the consulting default) · headers only (breadcrumb + page number, no footer) · minimal (title and content only, no breadcrumb or footer).
 
 Output is PowerPoint unless the user asks otherwise. The topic and any source material come from their opening request; ask for them if missing. A wrong assumption here, above all on **type and framing**, means rebuilt slides later. Whatever the user picks for theme and font is recorded once at the top of the build and never mixed mid-deck (tokens in `references/design-system.md`).
 
@@ -96,7 +97,7 @@ Once the ghost deck is approved, build slides one at a time, in this order every
 
    The catalog is a floor, not a ceiling — if quantitative content needs a chart the catalog doesn't show, build the chart; if a brief needs density the patterns produce sparsely, invent a layout. Components compose: a chart under an ink-emphasis takeaway, a primitive beside a stat tile.
 3. **Visual.** Build the chart or diagram. For quantitative content, default to a chart over stat cards — see `references/charts.md` to pick the type, then keep it honest (no 3D, zero baselines, direct labels, logical bar order). One accent element per slide; the rest stay neutral.
-4. **Context line + footer.** Open the slide with one italic context sentence (why the reader is looking, before the number lands). Close it with the footer: an italic source/caveat on the left, a `Source | N of M` label on the right. Every chart slide footnotes its source, time window, and any caveat.
+4. **Context line + footer.** Open the slide with one italic context sentence (why the reader is looking, before the number lands). Close it with the footer: an italic source/caveat on the left, a `Source | N of M` label on the right. Every chart slide footnotes its source, time window, and any caveat. Honour the **slide-chrome** choice from intake: *headers only* keeps the breadcrumb and page number but drops the footer; *minimal* drops the breadcrumb and footer both, leaving title and content. Apply the choice consistently across every slide.
 
 Use the `header()` / `title()` / `footer()` helpers (in `references/design-system.md`) so every slide shares one anatomy and the reader reads content, not orientation.
 
