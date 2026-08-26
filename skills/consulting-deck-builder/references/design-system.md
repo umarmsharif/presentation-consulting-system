@@ -124,6 +124,39 @@ const FONT = "Manrope";               // body, always
 
 The title helper sets its headline with `bold: DISPLAY_BOLD`, so a serif pick renders roman and the all-sans pick renders bold from one code path.
 
+### Rendering the fonts
+
+Every default display face above is a macOS face. The body sans (Manrope) is freely
+available; the display faces largely are not. A deck built on Linux or in CI will
+therefore render its headlines in whatever the system substitutes, and nothing warns
+you — LibreOffice dropped Type1 support, so even an installed Type1 Charter is
+ignored and `Charter` resolves to DejaVu Sans. The deck then ships as a single
+sans family, which is the tell the pairing exists to prevent.
+
+Verify after any PDF export, rather than trusting the on-screen preview:
+
+```bash
+python3 -c "import pymupdf; d=pymupdf.open('deck.pdf'); \
+print(sorted({f[3] for p in d for f in p.get_fonts()}))"
+```
+
+The display face must appear in that list. `DejaVuSans` appearing where the display
+face should be means the export is wrong, however correct the source file is.
+
+On Linux, XCharter (CTAN, OpenType) is an extension of the same Matthew Carter design
+and substitutes for Charter cleanly. Install it, then alias the PPTX font name onto it
+in `/etc/fonts/conf.d/`:
+
+```xml
+<match target="pattern">
+  <test name="family" qual="any"><string>Charter</string></test>
+  <edit name="family" mode="assign" binding="strong"><string>XCharter</string></edit>
+</match>
+```
+
+Keep the PPTX declaring `Charter`, which is correct on the machine the deck is
+presented from; the alias only fixes the export box.
+
 If the display face is a serif, keep **data numerals** (stat cards, chart values, KPI figures) in Manrope — old-style serif figures hurt scannability in dense data. The serif carries prose only: titles, section names, the occasional large editorial numeral.
 
 ### The vetted font list

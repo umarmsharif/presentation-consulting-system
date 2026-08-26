@@ -108,7 +108,8 @@ A short pass, not a second project:
 1. **Titles tell the story.** Read every action title top to bottom — the deck's argument is legible from the titles alone. Re-run `scripts/check_titles.js`.
 2. **Every claim traces to evidence.** Each recommendation points back to a stated finding; each chart has a source.
 3. **Design discipline holds.** One accent per slide. No one-edge accent bars, no eyebrow pills, no oversized section numerals, no second font sneaking in. Nothing crosses the bottom safe edge.
-4. **Prose is clean.** No banned vocabulary (below), at most one em-dash per slide, no negative parallelisms ("not X, but Y"), no closing-summary slide that just recaps the deck.
+4. **Prose is clean.** No banned vocabulary (below), at most one em-dash per slide, no negative parallelisms ("not X, but Y"), no closing-summary slide that just recaps the deck. Run `scripts/check_prose.js` — reading for these yourself does not work, because the cadence sounds fine one slide at a time and only reads as a tic across the deck.
+5. **The fonts actually rendered.** If you exported a PDF, confirm the display face is embedded rather than substituted (see below). A silent fallback costs you the serif/sans pairing, which is the system's main defence against looking generated.
 
 ---
 
@@ -176,6 +177,8 @@ The tells that mark a deck as machine-made, and the fix for each:
 - **Three accents fighting on one slide.** Fix: one accent element; the rest neutral.
 - **A legend where a direct label would do.** Fix: label the bar or line itself when colours are few.
 - **A closing slide that recaps the deck.** Fix: end on the ask or the next step.
+- **A display font that silently fell back.** Every theme's default display face (Charter, Iowan Old Style, Baskerville, Cochin, Hoefler Text, Palatino, Optima) is a macOS face. On Linux or CI they are usually absent, and LibreOffice no longer reads Type1, so `Charter` resolves to DejaVu Sans without a warning and the deck loses its pairing — the exact tell the pairing exists to avoid. Fix: verify the embedded fonts after any PDF export, do not trust the preview. See "Rendering the fonts" in `references/design-system.md`.
+- **Hardcoded row or card heights.** A stack whose heights are written as literals sums past the `6.97` bottom safe edge the moment a row grows, and collides with the footer divider. Coordinate arithmetic passes this; the eye catches it. Fix: derive every row height from the available band (`bandBottom - bandTop`, less gutters) so the stack cannot exceed it, then render and look.
 
 ---
 
