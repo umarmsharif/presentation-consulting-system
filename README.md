@@ -29,7 +29,7 @@ Four slides from the included demo build. The company, "Meridian," is fictional 
 
 It's an Agent Skill, so it runs anywhere Claude does. **Claude Code gives the best experience by far.** It reads the skill's files directly, runs the build script, and writes an editable `.pptx` straight into your project, because it has full access to your files and folders. Cowork is a close second. Chat is for the thinking work.
 
-Whatever the surface, the flow is the same once it triggers: a short brief, then a **ghost deck** (action titles + a layout per slide) for your sign-off, then it writes its own build script and produces the deck. You get an editable `.pptx`, not a screenshot.
+Whatever the surface, the flow is the same once it triggers: a short brief (including which sections the deck carries), a fact check on every client, agreement and number in your material, then a **ghost deck** (action titles + a layout per slide) for your sign-off, a storyline and slide-writing review of the copy, and only then its own build script and the deck. You get an editable `.pptx`, not a screenshot.
 
 ### Claude Code (recommended)
 
